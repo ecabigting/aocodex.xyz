@@ -1,23 +1,28 @@
 import Head from 'next/head'
 import Footer from './footer'
 import styles from '../styles/Home.module.css'
+import searchplayer from './searchplayer/[slug]'
 
-export default function Home() {
+export default function Player() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>AOCodex</title>
+        <title>Player - AOCodex</title>
         <meta name="description" content="Albion Online Codex" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          AOCodex 
+          Player
         </h1>
 
         <p className={styles.description}>
-          Coming soon! Useful tools and information for Albion Online!
+          <form method="post" onSubmit={searchplayer}>
+            <label>Search:</label>
+            <input type="text" id="search"/>
+            <input type="submit" name="Search" value="submit"/>
+          </form>
         </p>
       </main>
 
